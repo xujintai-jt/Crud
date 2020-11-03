@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Dashboard Template for Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Custom styles for this template -->
+  <link href="/public/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">添加学生</h1>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <tbody>
+          <form action='/students/edit' method="post">
+            <input type="hidden" value="{{student.id}}" name="id">
+            <div class="form-group">
+              <label for="exampleInputEmail1">姓名</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" value="{{student.name}}" name="name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1" {{student.gender}}>性别</label>
+              <div>
+                <label>
+                  <input type="radio" value=0 name='gender' checked>男
+                </label>
+                <label>
+                  <input type="radio" value=1 name='gender'>女
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">年龄</label>
+              <input type="text" class="form-control" value={{student.age}} name='age' id="exampleInputPassword1">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">爱好</label>
+              <input type="text" value={{student.hobbies}} class="form-control" name='hobbies'
+                id="exampleInputPassword1">
+            </div>
+
+            <button type="submit" class="btn btn-default">修改</button>
+          </form>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>
